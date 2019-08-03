@@ -15,7 +15,6 @@ export class Scale extends Notes {
 
   setScale(start: Note, scale: ScaleName, length?: number) {
     const steps = this.getSteps(scale);
-    console.log(steps);
     const scaleLength = length ? length : steps.length;
 
     this.notes.push(start);
@@ -25,7 +24,6 @@ export class Scale extends Notes {
         new Note(previousNote.absoluteSemitones + steps[i % scaleLength])
       );
     }
-    console.log(this.notes);
   }
 
   getSteps(scale: ScaleName) {
