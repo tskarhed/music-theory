@@ -3,7 +3,7 @@ import { Note } from "./note";
 describe("Music theory", () => {
   let theory: Note;
   beforeEach(() => {
-    theory = new Note();
+    theory = new Note("A4");
   });
   describe("should decode scientific music notation", () => {
     it("should return the correct octave", () => {
@@ -14,7 +14,8 @@ describe("Music theory", () => {
         octave: 1,
         absolute: 13,
         note: "C#",
-        noteIndex: 1
+        noteIndex: 1,
+        scientific: "C#1"
       });
     });
     it("should fail when sending in too many characters", () => {

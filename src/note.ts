@@ -1,20 +1,24 @@
 const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 
 export class Note {
-  private absoluteSemiTones: number;
+  absoluteSemitones: number;
   freq: number;
   octave: number;
   noteIndex: number;
   note: string; // Consider creating type
+  scientific: string;
 
-  constructor(notation = "A4") {
-    const note = this.decodeNotation(notation);
+  constructor(notation: string | number) {
+    const note = this.decodeNotation(
+      typeof notation == "number" ? this.encodeNotation(notation) : notation
+    );
 
     this.note = note.note;
     this.noteIndex = note.noteIndex;
     this.octave = note.octave;
-    this.absoluteSemiTones = note.absolute;
+    this.absoluteSemitones = note.absolute;
     this.freq = this.getFrequency(note.absolute);
+    this.scientific = note.scientific;
   }
 
   // private
@@ -39,7 +43,8 @@ export class Note {
       note,
       noteIndex: notes.indexOf(note),
       octave,
-      absolute: notes.indexOf(note) + 12 * octave
+      absolute: notes.indexOf(note) + 12 * octave,
+      scientific: string
     };
   }
 
