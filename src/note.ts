@@ -53,6 +53,10 @@ export class Note {
     const octave = Math.floor(Math.floor(n) / 12);
     return note + octave;
   }
+
+  getRelativeNote(steps: number) {
+    return new Note(this.absoluteSemitones + steps);
+  }
 }
 
 export const isScientificNotation = (notationString: string) =>

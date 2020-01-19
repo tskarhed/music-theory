@@ -63,4 +63,11 @@ describe("Music theory", () => {
       expect(isScientificNotation("C4D#4")).toBe(false);
     });
   });
+
+  describe("Getting modified notes", () => {
+    it("gets relative note", () => {
+      const note = new Note("D4");
+      expect(note.getRelativeNote(3)).toStrictEqual(new Note("F4"));
+    });
+  });
 });
