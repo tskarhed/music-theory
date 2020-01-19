@@ -28,6 +28,8 @@ export class Scale extends Notes {
 
   getSteps(scale: ScaleName) {
     switch (scale) {
+      case "minor":
+        return [2, 1, 2, 2, 1, 2, 2];
       case "persian":
         return [1, 3, 1, 1, 2, 3, 1];
       case "major":

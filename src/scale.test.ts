@@ -15,6 +15,20 @@ describe("Scale", () => {
       "C5"
     ]);
   });
+  it("sets minor scale", () => {
+    let scale = new Scale("C4", "minor");
+
+    expect(scale.getNotes()).toEqual([
+      "C4",
+      "D4",
+      "D#4",
+      "F4",
+      "G4",
+      "G#4",
+      "A#4",
+      "C5"
+    ]);
+  });
   it("handles cusotm length", () => {
     let scale = new Scale("C4", "major", 8);
     expect(scale.getNotes().length).toBe(8);
