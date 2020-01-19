@@ -1,4 +1,4 @@
-import { Note } from "./note";
+import { Note, isScientificNotation, noteRegExp } from "./note";
 
 describe("Music theory", () => {
   let theory: Note;
@@ -37,6 +37,30 @@ describe("Music theory", () => {
     });
     it("C0", () => {
       expect(theory.getFrequency(0)).toBeCloseTo(16.35);
+    });
+  });
+
+  describe("test scientific notation assertion", () => {
+    it("fetches regex properly", () => {
+      expect(noteRegExp).toStrictEqual(/^[a-g]#?\d$/i);
+    });
+    it("checks 2 character notation", () => {
+      expect(isScientificNotation("C0")).toBe(true);
+    });
+    it("fails on faulty string", () => {
+      expect(isScientificNotation("c00")).toBe(false);
+    });
+
+    it("accepts sharp note", () => {
+      expect(isScientificNotation("F#3")).toBe(true);
+    });
+
+    it("fails at letter outside of scope", () => {
+      expect(isScientificNotation("J2")).toBe(false);
+    });
+
+    it("fails at multiple notes", () => {
+      expect(isScientificNotation("C4D#4")).toBe(false);
     });
   });
 });

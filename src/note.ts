@@ -54,3 +54,8 @@ export class Note {
     return note + octave;
   }
 }
+
+export const isScientificNotation = (notationString: string) =>
+  noteRegExp.test(notationString);
+
+export const noteRegExp = /^[a-g]#?\d$/i;

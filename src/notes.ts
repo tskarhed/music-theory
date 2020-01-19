@@ -11,8 +11,4 @@ export class Notes {
       return note.scientific;
     });
   }
-
-  push(note: Note) {
-    this.notes.push(note);
-  }
 }
