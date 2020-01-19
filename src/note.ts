@@ -35,7 +35,7 @@ export class Note {
     } else if (string.length === 2) {
       note = string[0].toUpperCase();
     } else {
-      throw new Error("Faulty music notation");
+      throw new Error(`Faulty music notation: ${string}`);
     }
     const octave = parseInt(string.slice(-1), 10);
 

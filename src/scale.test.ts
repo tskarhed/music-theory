@@ -11,12 +11,27 @@ describe("Scale", () => {
       "F4",
       "G4",
       "A4",
-      "B4"
+      "B4",
+      "C5"
     ]);
   });
   it("handles cusotm length", () => {
     let scale = new Scale("C4", "major", 8);
     expect(scale.getNotes().length).toBe(8);
     expect(scale.getNotes()[7]).toBe("C5");
+  });
+  it("sets persion scale", () => {
+    let scale = new Scale("C4", "persian");
+
+    expect(scale.getNotes()).toEqual([
+      "C4",
+      "C#4",
+      "E4",
+      "F4",
+      "F#4",
+      "G#4",
+      "B4",
+      "C5"
+    ]);
   });
 });
