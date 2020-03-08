@@ -1,7 +1,7 @@
 import { Notes } from "./notes";
 import { Note } from "./note";
 
-type ScaleName = "persian" | "major" | "minor" | "pentatonic";
+type ScaleName = "persian" | "major" | "minor" | "pentatonic" | "pentatonic minor";
 
 export class Scale extends Notes {
   startNote: Note;
@@ -32,6 +32,10 @@ export class Scale extends Notes {
         return [2, 1, 2, 2, 1, 2, 2];
       case "persian":
         return [1, 3, 1, 1, 2, 3, 1];
+      case "pentatonic minor":
+        return [3, 2, 2, 3, 2];
+      case "pentatonic":
+        return [2, 2, 3, 2, 3]
       case "major":
       default:
         return [2, 2, 1, 2, 2, 2, 1];

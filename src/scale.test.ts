@@ -48,4 +48,30 @@ describe("Scale", () => {
       "C5"
     ]);
   });
+
+  it("sets minor pentatonic scale", () => {
+    let scale = new Scale("C4", "pentatonic minor");
+
+    expect(scale.getNotes()).toEqual([
+      "C4",
+      "D#4",
+      "F4",
+      "G4",
+      "A#4",
+      "C5"
+    ]);
+  });
+
+  it("sets major pentatonic scale", () => {
+    let scale = new Scale("C4", "pentatonic");
+
+    expect(scale.getNotes()).toEqual([
+      "C4",
+      "D4",
+      "E4",
+      "G4",
+      "A4",
+      "C5"
+    ]);
+  });
 });
