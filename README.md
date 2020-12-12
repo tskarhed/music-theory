@@ -28,6 +28,8 @@ let scale = new Scale("D4", "minor", 8); //Generates 8 notes in the minor scale
 
 Clone this repository and run
 
+The goal for this repository is to have 100% code coverage, so TDD is strongly encouraged!
+
 ```
 yarn install
 ```
