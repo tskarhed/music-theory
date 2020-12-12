@@ -1,4 +1,4 @@
-# :musical_score: music-theory [![codecov](https://codecov.io/gh/dehrax/music-theory/branch/master/graph/badge.svg)](https://codecov.io/gh/dehrax/music-theory)  [![CircleCI](https://circleci.com/gh/tskarhed/music-theory.svg?style=svg)](https://circleci.com/gh/tskarhed/music-theory)
+# :musical_score: music-theory [![codecov](https://codecov.io/gh/tskarhed/music-theory/branch/master/graph/badge.svg?token=Msbg6hMaE5)](https://codecov.io/gh/tskarhed/music-theory)  [![CircleCI](https://circleci.com/gh/tskarhed/music-theory.svg?style=svg)](https://circleci.com/gh/tskarhed/music-theory)
 
 Create notes and get their frequencies! Create scales! Create chords!
 
