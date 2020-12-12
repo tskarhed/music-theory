@@ -61,5 +61,5 @@ export class Note {
 
 export const isScientificNotation = (notationString: string) =>
   noteRegExp.test(notationString);
-
-export const noteRegExp = /^[a-g]#?\d$/i;
+  
+export const noteRegExp = /^([A-G])(b|#)?\d+$/i;

@@ -42,17 +42,21 @@ describe("Music theory", () => {
 
   describe("test scientific notation assertion", () => {
     it("fetches regex properly", () => {
-      expect(noteRegExp).toStrictEqual(/^[a-g]#?\d$/i);
+      expect(noteRegExp).toStrictEqual(/^([A-G])(b|#)?\d+$/i);
     });
     it("checks 2 character notation", () => {
       expect(isScientificNotation("C0")).toBe(true);
     });
     it("fails on faulty string", () => {
-      expect(isScientificNotation("c00")).toBe(false);
+      expect(isScientificNotation("c0d")).toBe(false);
     });
 
     it("accepts sharp note", () => {
       expect(isScientificNotation("F#3")).toBe(true);
+    });
+
+    it("accepts flat note", () => {
+      expect(isScientificNotation("Fb4")).toBe(true);
     });
 
     it("fails at letter outside of scope", () => {
