@@ -14,4 +14,10 @@ describe("Chord", () => {
     const chord = new Chord("D");
     expect(chord.getNotes()[0]).toBe("D4");
   });
+
+  it("Throw an error with invalid Chord string", () => {
+    expect(() => {
+      const chord = new Chord("Dmaj4augustochlotta");
+    }).toThrowError();
+  });
 });
